@@ -1,62 +1,60 @@
-# CodeIgniter 4 Application Starter
+# Website Undangan dengan CodeIgniter 4
 
-## What is CodeIgniter?
+## Apa itu CodeIgniter?
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+CodeIgniter adalah suatu framework web PHP full-stack yang ringan, cepat, fleksibel, dan aman.
+Informasi lebih lanjut dapat ditemukan di [situs resmi CodeIgniter](https://codeigniter.com).
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+Repositori ini berisi starter aplikasi CodeIgniter 4 yang dapat digunakan sebagai dasar untuk membuat website undangan.
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+## Tentang Proyek
 
-The user guide corresponding to the latest version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/).
+Proyek ini adalah sebuah aplikasi website undangan yang dapat membantu dalam mengelola undangan acara khusus Anda. Dengan menggunakan CodeIgniter 4 sebagai dasar, proyek ini memiliki keamanan yang baik dan memisahkan komponen dengan baik untuk memudahkan pengembangan lebih lanjut.
 
-## Installation & updates
+Proyek ini memungkinkan pengguna untuk membuat undangan acara, mengelola tamu undangan, dan melacak konfirmasi kehadiran.
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+## Instalasi & Pembaruan
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+Untuk menggunakan proyek ini, lakukan langkah-langkah berikut:
+
+1. Clone repositori: `git clone https://github.com/username/repo.git`
+2. Masuk ke direktori proyek: `cd repo`
+3. Install dependencies: `composer install`
+4. Salin `env` menjadi `.env` dan sesuaikan konfigurasi yang diperlukan.
+5. Lakukan migrasi database: `php spark migrate`
+6. Jalankan aplikasi: `php spark serve`
+
+Untuk pembaruan, gunakan perintah berikut:
+
+- Perbarui proyek: `git pull origin master`
+- Perbarui dependencies: `composer update`
 
 ## Setup
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+Setelah instalasi, sesuaikan file `.env` untuk konfigurasi aplikasi Anda, terutama baseURL
+dan pengaturan database.
 
-## Important Change with index.php
+## Perubahan Penting pada index.php
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+`index.php` tidak lagi berada di root proyek! Ia telah dipindahkan ke dalam folder *public*,
+untuk keamanan yang lebih baik dan pemisahan komponen.
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+Pastikan server web Anda dikonfigurasi untuk menunjuk ke folder *public* proyek Anda, dan
+bukan ke root proyek. Praktik yang lebih baik adalah dengan mengkonfigurasi virtual host untuk menunjuk ke sana.
 
-**Please** read the user guide for a better explanation of how CI4 works!
+## Manajemen Repositori
 
-## Repository Management
+Untuk melaporkan bug, permintaan fitur, dan diskusi lebih lanjut, gunakan GitHub Issues pada repositori ini. Kami sangat mengapresiasi kontribusi dan partisipasi dari komunitas.
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+## Persyaratan Server
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
-
-## Server Requirements
-
-PHP version 7.4 or higher is required, with the following extensions installed:
+Versi PHP 7.4 atau lebih tinggi diperlukan, dengan pemasangan ekstensi berikut:
 
 - [intl](http://php.net/manual/en/intl.requirements.php)
 - [mbstring](http://php.net/manual/en/mbstring.installation.php)
 
-Additionally, make sure that the following extensions are enabled in your PHP:
+Pastikan ekstensi berikut diaktifkan di PHP Anda:
 
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+- json (diaktifkan secara default - jangan nonaktifkan)
+- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) jika Anda berencana menggunakan MySQL
+- [libcurl](http://php.net/manual/en/curl.requirements.php) jika Anda berencana menggunakan pustaka HTTP\CURLRequest
